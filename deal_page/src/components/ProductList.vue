@@ -22,23 +22,11 @@ import "swiper/css/swiper.css";
 import * as Papa from "papaparse";
 
 export default {
-  props: ["id"],
   name: "carrousel",
-  computed: {
-    swiper() {
-      return this.$refs.mySwiper.$swiper;
-    },
-    product_id: function () {
-      return this.$route.params.product_id;
-    },
-  },
   components: {
     SingleProduct,
     Swiper,
     SwiperSlide,
-  },
-  directives: {
-    swiper: directive,
   },
   data() {
     return {
@@ -59,18 +47,24 @@ export default {
       },
     };
   },
-
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.$swiper;
+    },
+    product_id: function () {
+      return this.$route.params.product_id;
+    },
+  },
+  directives: {
+    swiper: directive,
+  },
   created: function () {
     this.fetchProducts();
   },
-  updated(){
-     this.swiper.slideTo(this.currentProductIndex, 1000, false);
+  updated() {
+    this.swiper.slideTo(this.currentProductIndex, 1000, false);
   },
 
-  mounted() {
-    console.log("Current Swiper instance object", this.swiper);
-    
-  },
   methods: {
     fetchProducts() {
       Papa.parse(this.url, {
@@ -95,21 +89,17 @@ export default {
         .catch(() => {});
     },
     setCurrentProductIndex() {
-       for (let i = 0; i < this.productList.length; i++) {
+      for (let i = 0; i < this.productList.length; i++) {
         if (this.$route.params.product_id === this.productList[i].id) {
           this.currentProductIndex = i;
-          return
+          return;
         }
       }
-     this.$router.push({name: "NotFound"});
+      this.$router.push({ name: "NotFound" });
     },
   },
 };
 </script>
 
 <style scoped>
-.product-list {
-  height: 100%;
-  z-index: -100;
-}
 </style>

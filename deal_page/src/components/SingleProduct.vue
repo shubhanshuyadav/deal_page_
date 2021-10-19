@@ -1,6 +1,5 @@
 <template>
   <v-main>
-    <!--Header-->
     <v-flex class="d-flex justify-space-between px-1">
       <v-icon large>reply</v-icon>
       <div class="pt-1">
@@ -13,7 +12,6 @@
     </v-flex>
 
     <v-flex class="d-row-flex justify-space-between">
-      <!--Product Image-->
       <v-flex column style="height: 40vh">
         <v-img contain height="100%" :src="product.Image"></v-img>
       </v-flex>
@@ -55,7 +53,7 @@
         </v-flex>
       </v-layout>
     </v-flex>
-    <v-flex style="height: 6vh" class="d-flex justify-center pb-3 button">
+    <v-flex style="height: 6vh" class="d-flex align-center button">
       <v-btn :href="product.buying_link" class="white--text" color="#2C2891">Buy Now</v-btn>
     </v-flex>
   </v-main>
@@ -68,14 +66,10 @@ export default {
 </script>
 
 <style>
-.main-container {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
 .button {
   position: absolute;
   top: 93vh;
-  right: 38%;
+  right: 36%;
+  
 }
 </style>
