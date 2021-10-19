@@ -1,4 +1,4 @@
-# product_deal_page
+# deal_page
 
 ## Project setup
 ```
