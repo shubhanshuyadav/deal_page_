@@ -37,7 +37,7 @@ export default {
         direction: "vertical",
         centeredSlides: true,
         speed: 600,
-        height:1000,
+        height:1100,
         grabCursor: true,
         pagination: {
           el: ".swiper-pagination",
