@@ -102,6 +102,6 @@ export default {
 
 <style scoped>
 .swiper{
-  height:100vh;
+  height:90vh;
 }
 </style>
