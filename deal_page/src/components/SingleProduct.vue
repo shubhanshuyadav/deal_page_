@@ -5,7 +5,7 @@
             <v-icon large>reply</v-icon>
           </div>
           <div class="pt-1">
-            <v-img :src="product.website_logo" width="35vw"></v-img>
+            <v-img :src="product.website_logo" width="190px"></v-img>
           </div>
           <div>
             <v-icon class="pt-1" large>favorite_border</v-icon>
