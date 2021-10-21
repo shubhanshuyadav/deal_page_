@@ -8,13 +8,13 @@
         <div class="pt-1">
           <v-img :src="product.website_logo" width="160px"></v-img>
         </div>
-        <div>
-          <v-icon class="pt-1" large>favorite_border</v-icon>
+        <div width="60px">
+          <Timer :endAt="product.end_time"/>
         </div>
       </v-flex>
     </header>
-    <v-container>
-      <v-row>
+    <v-container fluid>
+      <v-row class="row-container">
         <v-card flat fill-height style="height: 100%">
           <v-flex column style="height: 40vh">
             <v-img contain height="100%" :src="product.Image"></v-img>
@@ -22,7 +22,7 @@
 
           <v-sheet
             style="height: 5vh"
-            class="d-flex align-center justify-center green px-0"
+            class="d-flex align-center justify-center px-0"
           >
             <h2 class="white--text">{{ product.off }}% OFF</h2>
           </v-sheet>
@@ -58,8 +58,12 @@
             }}</v-card-text>
           </div>
         </v-card>
-        <v-col>
-          <v-footer bottom fixed padless class="mb-1 justify-center white btn">
+         <v-col>
+         
+        </v-col>
+      </v-row>
+    </v-container>
+     <v-footer padless top absolute class="mb-1 d-block text-center white btn">
             <v-btn
               :href="product.buying_link"
               class="white--text"
@@ -72,6 +76,7 @@
                 v-if="this.showShareOptions"
                 class="
                   d-flex
+                 justify-center
                   transition-fast-in-fast-out
                   v-card--reveal
                   text-h4
@@ -82,22 +87,29 @@
               </div>
             </v-expand-transition>
           </v-footer>
-        </v-col>
-      </v-row>
-    </v-container>
   </v-main>
 </template>
 
 <script>
 import ShareOption from "../components/ShareOption.vue";
+import Timer from "../components/Timer.vue"
 export default {
   props: ["product"],
-  components: { ShareOption },
+  components: { ShareOption,Timer},
   data() {
     return {
       showShareOptions: false,
     };
   },
+mounted(){
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    window.addEventListener('resize', () => {
+    // We execute the same script as before
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+},
   methods: {
     setShowShareOption() {
       console.log("i got clicked");
@@ -108,10 +120,15 @@ export default {
 </script>
 
 <style>
+.row-container{
+ 
+}
 .main-container {
   box-sizing: border-box;
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
 }
 .btn {
-  z-index: 100;
+  bottom:10px;
 }
 </style>

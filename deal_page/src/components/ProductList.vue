@@ -7,7 +7,7 @@
       class="swiper"
       style="max-width: 800px"
     >
-      <swiper-slide v-for="product in productList" :key="product.id">
+      <swiper-slide class="swiper" v-for="product in productList" :key="product.id">
         <SingleProduct :product="product"></SingleProduct>
       </swiper-slide>
     </swiper>
@@ -63,6 +63,15 @@ export default {
   updated() {
     this.swiper.slideTo(this.currentProductIndex, 1000, false);
   },
+  mounted(){
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    window.addEventListener('resize', () => {
+    // We execute the same script as before
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+  },
 
   methods: {
     fetchProducts() {
@@ -102,6 +111,8 @@ export default {
 
 <style scoped>
 .swiper{
-  height:90vh;
+  position: relative;
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
 }
 </style>
