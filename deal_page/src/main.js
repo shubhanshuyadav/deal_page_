@@ -4,6 +4,8 @@ import router from "./router";
 import store from "./store";
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
 import vuetify from "./plugins/vuetify";
+import shareIt from "vue-share-it";
+Vue.use(shareIt);
 
 
 new Vue({
