@@ -17,7 +17,7 @@
         </div>
       </v-flex>
     </header>
-    <v-container fluid class="description">
+    <v-container fluid >
       <v-row class="row-container">
         <v-card flat fill-height style="height: 100%">
           <v-flex column style="height: 40vh">
@@ -56,7 +56,7 @@
               </h4>
             </div>
           </v-flex>
-          <div class="" style="height: 25vh">
+          <div class="description" style="height: 25vh">
             <v-card-text style="font-size:2.5vh" class="d-flex text--secondary px-2 pt-1 my-0">{{
               product.description.substring(0, 350) + "..."
             }}</v-card-text>
@@ -67,7 +67,7 @@
         </v-col>
       </v-row>
     </v-container>
-     <v-footer padless top absolute class="mb-1 d-block text-center white btn">
+     <v-footer padless top absolute class="pb-1 d-block text-center white btn">
             <v-btn
               :href="product.buying_link"
               class="white--text"
