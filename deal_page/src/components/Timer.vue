@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h5 class="green--text pt-2 ">{{this.timeRemaining}}</h5>
+    <h5 style="color:#616161" class=" font-italic">{{this.timeRemaining}}</h5>
   </div>
 </template>
 

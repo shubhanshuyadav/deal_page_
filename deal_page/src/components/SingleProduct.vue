@@ -2,16 +2,18 @@
   <v-main class="main-container " fill-height>
     <header>
       <v-flex class="d-flex justify-space-between px-1">
-        <div>
+        <div >
           <v-btn icon>
             <v-icon large @click="setShowShareOption">reply</v-icon>
           </v-btn>
         </div>
-        <div>
+        <div class="text-center">
           <v-img :src="product.website_logo" width="160px"></v-img>
-        </div>
-        <div width="60px">
           <Timer :endAt="product.end_time"/>
+        </div>
+        <div class="px-1">
+          <v-icon large @click="setShowShareOption">favorite_border
+          </v-icon>
         </div>
       </v-flex>
     </header>
@@ -54,8 +56,8 @@
               </h5>
             </div>
           </v-flex>
-          <div class="" style="height: 25vh">
-            <v-card-text  class="d-flex text-lg-600 text--secondary">{{
+          <div>
+            <v-card-text style="font-size: 2.3vh;" class="d-flex text--secondary">{{
               product.description.substring(0, 200) + "..."
             }}</v-card-text>
           </div>
