@@ -3,13 +3,11 @@
     <header>
       <v-flex class="d-flex justify-space-between px-1">
         <div>
-          <v-btn 
-            retain-focus-on-click="false"
-            icon>
+          <v-btn icon>
             <v-icon large @click="setShowShareOption">reply</v-icon>
           </v-btn>
         </div>
-        <div class="pt-1">
+        <div>
           <v-img :src="product.website_logo" width="160px"></v-img>
         </div>
         <div width="60px">
@@ -31,9 +29,9 @@
             <h2 class="white--text">{{ product.off }}% OFF</h2>
           </v-sheet>
 
-          <v-flex class="d-flex justify-space-between align-start px-2 pt-3">
+          <v-flex class="d-flex justify-space-between align-start px-4 pt-3">
             <div style="font-size:2.5vh" class="d-row-flex">
-              <h4>{{ product.title }}</h4>
+              <h3>{{ product.title }}</h3>
               <v-flex class="d-inline-flex justify-space-between">
                 <h5 class="white--text px-1 mr-1 green rounded-sm">
                   {{ product.ratings }}<v-icon small dark>star</v-icon>
@@ -43,9 +41,9 @@
                 </h5>
               </v-flex>
             </div>
-            <div class="d-row-flex">
-              <h4>₹{{ (product.price * product.off) / 100 }}</h4>
-              <h4
+            <div style="font-size:2.5vh" class="d-row-flex">
+              <h3>₹{{ (product.price * product.off) / 100 }}</h3>
+              <h5
                 class="
                   font-weight-medium
                   pr-1
@@ -53,12 +51,12 @@
                 "
               >
                 ₹{{ product.price }}
-              </h4>
+              </h5>
             </div>
           </v-flex>
-          <div class="description" style="height: 25vh">
-            <v-card-text style="font-size:2.5vh" class="d-flex text--secondary px-2 pt-1 my-0">{{
-              product.description.substring(0, 350) + "..."
+          <div class="" style="height: 25vh">
+            <v-card-text  class="d-flex text-lg-600 text--secondary">{{
+              product.description.substring(0, 200) + "..."
             }}</v-card-text>
           </div>
         </v-card>
@@ -123,10 +121,6 @@ mounted(){
 </script>
 
 <style>
-.description{
-  overflow: scroll;
-}
-.icon-btn:focus::before { opacity: 0 !important; }
 .main-container {
   box-sizing: border-box;
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
