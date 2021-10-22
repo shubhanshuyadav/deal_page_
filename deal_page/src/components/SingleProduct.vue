@@ -1,9 +1,13 @@
 <template>
-  <v-main class="main-container" fill-height>
+  <v-main class="main-container " fill-height>
     <header>
       <v-flex class="d-flex justify-space-between px-1">
         <div>
-          <v-icon large @click="setShowShareOption">reply</v-icon>
+          <v-btn 
+            retain-focus-on-click="false"
+            icon>
+            <v-icon large @click="setShowShareOption">reply</v-icon>
+          </v-btn>
         </div>
         <div class="pt-1">
           <v-img :src="product.website_logo" width="160px"></v-img>
@@ -13,7 +17,7 @@
         </div>
       </v-flex>
     </header>
-    <v-container fluid>
+    <v-container fluid class="description">
       <v-row class="row-container">
         <v-card flat fill-height style="height: 100%">
           <v-flex column style="height: 40vh">
@@ -22,13 +26,13 @@
 
           <v-sheet
             style="height: 5vh"
-            class="d-flex align-center justify-center px-0"
+            class="d-flex align-center justify-center px-0 green"
           >
             <h2 class="white--text">{{ product.off }}% OFF</h2>
           </v-sheet>
 
           <v-flex class="d-flex justify-space-between align-start px-2 pt-3">
-            <div class="d-row-flex">
+            <div style="font-size:2.5vh" class="d-row-flex">
               <h4>{{ product.title }}</h4>
               <v-flex class="d-inline-flex justify-space-between">
                 <h5 class="white--text px-1 mr-1 green rounded-sm">
@@ -52,9 +56,9 @@
               </h4>
             </div>
           </v-flex>
-          <div class="description" style="height: 25vh">
-            <v-card-text class="d-flex text--secondary px-2 pt-1 my-0">{{
-              product.description.substring(0, 250) + "..."
+          <div class="" style="height: 25vh">
+            <v-card-text style="font-size:2.5vh" class="d-flex text--secondary px-2 pt-1 my-0">{{
+              product.description.substring(0, 350) + "..."
             }}</v-card-text>
           </div>
         </v-card>
@@ -76,11 +80,10 @@
                 v-if="this.showShareOptions"
                 class="
                   d-flex
-                 justify-center
+                  justify-center
                   transition-fast-in-fast-out
                   v-card--reveal
                   text-h4
-
                 "
               >
                 <ShareOption />
@@ -120,15 +123,15 @@ mounted(){
 </script>
 
 <style>
-.row-container{
- 
+.description{
+  overflow: scroll;
 }
+.icon-btn:focus::before { opacity: 0 !important; }
 .main-container {
   box-sizing: border-box;
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh, 1vh) * 100);
 }
-.btn {
-  bottom:10px;
-}
+
+
 </style>
