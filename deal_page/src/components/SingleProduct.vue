@@ -12,7 +12,7 @@
           <Timer :endAt="product.end_time"/>
         </div>
         <div class="px-1">
-          <v-icon large @click="setShowShareOption">favorite_border
+          <v-icon large>favorite_border
           </v-icon>
         </div>
       </v-flex>
@@ -43,7 +43,7 @@
                 </h5>
               </v-flex>
             </div>
-            <div style="font-size:2.5vh" class="d-row-flex">
+            <div class="d-row-flex">
               <h3>₹{{ (product.price * product.off) / 100 }}</h3>
               <h5
                 class="
@@ -57,7 +57,7 @@
             </div>
           </v-flex>
           <div class="description">
-            <v-card-text style="font-size: 2.3vh;" class="d-flex text--secondary">{{
+            <v-card-text style="font-size:1rem" class="d-flex text--secondary">{{
               product.description.substring(0, 200) + "..."
             }}</v-card-text>
           </div>
