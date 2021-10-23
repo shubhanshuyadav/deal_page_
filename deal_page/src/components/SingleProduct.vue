@@ -56,7 +56,7 @@
               </h5>
             </div>
           </v-flex>
-          <div>
+          <div class="description">
             <v-card-text style="font-size: 2.3vh;" class="d-flex text--secondary">{{
               product.description.substring(0, 200) + "..."
             }}</v-card-text>
@@ -130,6 +130,8 @@ mounted(){
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh, 1vh) * 100);
 }
-
+.description{
+  overflow-y: scroll;
+}
 
 </style>
