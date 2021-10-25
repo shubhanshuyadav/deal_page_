@@ -2,17 +2,21 @@
   <v-main class="main-container" fill-height>
     <header>
       <v-flex class="d-flex justify-space-between px-1">
-        <div>
+         <div>
           <v-btn icon>
-            <v-icon large @click="setShowShareOption">reply</v-icon>
+            <router-link style="text-decoration: none; color: inherit;" :to="{name:'Home'}">
+              <v-icon large >home</v-icon>
+            </router-link>
           </v-btn>
         </div>
         <div class="text-center">
           <v-img :src="product.website_logo" width="160px"></v-img>
           <Timer :endAt="product.end_time" />
         </div>
-        <div class="px-1">
-          <v-icon large>favorite_border </v-icon>
+        <div>
+          <v-btn icon>
+            <v-icon large @click="setShowShareOption">mdi-share</v-icon>
+          </v-btn>
         </div>
       </v-flex>
     </header>
