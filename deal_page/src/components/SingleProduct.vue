@@ -66,7 +66,7 @@
             <v-card-text
               style="font-size: 0.9rem"
               class="d-flex text--secondary"
-              >{{ product.description.substring(0, 150) + "..." }}</v-card-text
+              >{{ product.description.substring(0, 200) + "..." }}</v-card-text
             >
           </div>
         </v-card>
