@@ -59,21 +59,16 @@ export default {
   },
   created: function () {
     this.fetchProducts();
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    window.addEventListener('resize', () => {
+    this.$router.go();
+});
   },
   updated() {
     this.swiper.slideTo(this.currentProductIndex, 1000, false);
   },
-  mounted(){
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-    window.addEventListener('resize', () => {
-    // We execute the same script as before
-
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-    this.$router.go();
-});
-  },
+ 
 
   methods: {
     fetchProducts() {
@@ -87,7 +82,6 @@ export default {
       });
     },
     onSwiperSlideChangeEnd() {
-      console.log("i got swiped");
       this.$router
         .push({
           name: "ProductList",

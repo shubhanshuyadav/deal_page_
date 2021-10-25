@@ -6,9 +6,11 @@
     ></v-img>
     <v-card-actions>
       <div class="mx-auto">
-          <router-link :to="{name:'ProductList',params:{product_id:'pr1'}}">
-               <v-btn color="orange lighten-2"> Go to deals </v-btn>
-          </router-link>
+        <router-link
+          :to="{ name: 'ProductList', params: { product_id: 'pr1' } }"
+        >
+          <v-btn color="orange lighten-2"> Go to deals </v-btn>
+        </router-link>
       </div>
     </v-card-actions>
   </v-card>
@@ -17,6 +19,3 @@
 <script>
 export default {};
 </script>
-
-<style>
-</style>
